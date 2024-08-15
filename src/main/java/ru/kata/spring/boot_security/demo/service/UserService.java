@@ -17,7 +17,7 @@ public interface UserService {
 
     Optional<User> findById(Long id);
 
-    User findByFirstname(String firstname);
+    User findByFirstname(String firstName);
 
     String getUserRoles(User user);
 

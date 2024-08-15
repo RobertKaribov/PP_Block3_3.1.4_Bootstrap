@@ -46,8 +46,8 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     @Transactional
     public void addNewUser(List<String> roles,User saveUser) {
         for (String role : roles) {
-            Role role1 = roleRepository.findByRole(role);
-            saveUser.getRoles().add(role1);
+            Role userRole = roleRepository.findByRole(role);
+            saveUser.getRoles().add(userRole);
         }
         userRepository.save(saveUser);
     }
@@ -55,8 +55,8 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     @Override
     @Transactional
     public void updateUser(String role,User updateUser) {
-        Role role1 = roleRepository.findByRole(role);
-        updateUser.getRoles().add(role1);
+        Role userRole = roleRepository.findByRole(role);
+        updateUser.getRoles().add(userRole);
         userRepository.save(updateUser);
     }
 
